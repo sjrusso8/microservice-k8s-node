@@ -1,0 +1,27 @@
+{
+  "name": "microservice-k8s-node",
+  "version": "1.0.0",
+  "description": "This is a personal study of microservice infra using NodeJS, Docker, Kubernetes, and Terraform",
+  "main": "./src/index.js",
+  "scripts": {
+    "start": "node ./src/index.js",
+    "start:dev": "nodemon ./src/index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sjrusso8/microservice-k8s-node.git"
+  },
+  "keywords": [],
+  "author": "Steve Russo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sjrusso8/microservice-k8s-node/issues"
+  },
+  "homepage": "https://github.com/sjrusso8/microservice-k8s-node#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
