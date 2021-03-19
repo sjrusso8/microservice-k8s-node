@@ -5,11 +5,18 @@ const express = require("express");
 const fs = require("fs");
 const path = require("path");
 
+// Gather the Port from the parent container
+if (!process.env.PORT) {
+  throw new Error(
+    "I can't figure out the port number for the HTTP server.  It must be set in the ENV"
+  );
+}
+
 /**
  * Set up express requirements
  */
 const app = express();
-const port = 3000;
+const PORT = process.env.PORT;
 
 //
 // Registers a HTTP GET route for video streaming.
@@ -34,8 +41,6 @@ app.get("/video", (req, res) => {
 //
 // Starts the HTTP server.
 //
-app.listen(port, () => {
-  console.log(
-    `Microservice listening on port ${port}, point your browser at http://localhost:3000/video`
-  );
+app.listen(PORT, () => {
+  console.log("Microservice is online");
 });
