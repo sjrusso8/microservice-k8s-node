@@ -1,0 +1,30 @@
+version: "3"
+
+services: 
+  video-streaming:
+    image: video-streaming
+    build: 
+      context: ./video-streaming
+      dockerfile: Dockerfile
+    container_name: video-streaming
+    ports: 
+      - "4000:80"
+    environment: 
+      - PORT=80
+    env_file:
+      - .env
+    restart: "no"
+
+  azure-storage:
+    image: azure-storage
+    build: 
+      context: ./azure-storage
+      dockerfile: Dockerfile
+    container_name: azure-storage
+    ports:
+      - "4001:80"
+    environment: 
+      - PORT=80
+    env_file:
+      - .env
+    restart: "no"
