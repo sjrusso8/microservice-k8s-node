@@ -1,6 +1,15 @@
 version: "3"
 
 services: 
+  db:
+    image: mongo:4.2.8
+    container_name: db
+    ports: 
+      - "4003:27017"
+    restart: "always"
+    volumes: 
+      - microservicedb:/data/db
+
   video-streaming:
     image: video-streaming
     build: 
@@ -28,3 +37,6 @@ services:
     env_file:
       - .env
     restart: "no"
+    
+volumes: 
+  microservicedb: 
