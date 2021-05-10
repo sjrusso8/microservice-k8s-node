@@ -1,4 +1,7 @@
 {
+  "scripts": {
+    "start": "node ./src/index.js"
+  },
   "dependencies": {
     "azure-storage": "^2.10.3",
     "express": "^4.17.1"
