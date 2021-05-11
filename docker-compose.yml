@@ -1,14 +1,21 @@
 version: "3"
 
 services: 
-  db:
-    image: mongo:4.2.8
-    container_name: db
-    ports: 
-      - "4003:27017"
-    restart: "always"
+  history:
+    image: history
+    build:
+      context: ./history
+      dockerfile: Dockerfile-dev
+    container_name: history
     volumes: 
-      - microservicedb:/data/db
+      - /tmp/history/npm-cache:/root/.npm:z
+      - ./history/src:/usr/src/app/src:z
+    ports:
+      - "4004:80"
+    environment: 
+      - PORT=80
+      - NODE_ENV=development
+    restart: "no"
 
   video-streaming:
     image: video-streaming
@@ -24,19 +31,5 @@ services:
       - .env
     restart: "no"
 
-  azure-storage:
-    image: azure-storage
-    build: 
-      context: ./azure-storage
-      dockerfile: Dockerfile
-    container_name: azure-storage
-    ports:
-      - "4001:80"
-    environment: 
-      - PORT=80
-    env_file:
-      - .env
-    restart: "no"
-    
 volumes: 
   microservicedb: 
