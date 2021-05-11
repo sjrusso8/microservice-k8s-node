@@ -1,5 +1,5 @@
 # A Microservice with Node, Docker, K8s, and Terraform
 
-Still a work in progress.  Only have a few structural components created so far.
+## Terraform and Azure Kubernetes Service
 
-This is a personal study of microservice infra using NodeJS, Docker, Kubernetes, and Terraform
+Playing around with the Terraform and AKS.
