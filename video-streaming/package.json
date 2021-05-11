@@ -19,7 +19,9 @@
   },
   "homepage": "https://github.com/sjrusso8/microservice-k8s-node#readme",
   "dependencies": {
+    "amqplib": "^0.7.1",
     "express": "^4.17.1",
+    "fs": "0.0.1-security",
     "mongodb": "^3.3.2"
   },
   "devDependencies": {
