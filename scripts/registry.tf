@@ -1,5 +1,5 @@
 resource "azurerm_container_registry" "container_registry" {
-  name                = "aksRegistry"
+  name                = "aksRegistryv2"
   resource_group_name = azurerm_resource_group.aks_resource.name
   location            = azurerm_resource_group.aks_resource.location
   sku                 = "Basic"

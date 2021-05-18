@@ -5,3 +5,10 @@ variable "resource_name" {
 variable "location" {
   type = string
 }
+variable "app_name" {
+  type = string
+}
+
+variable "admin_username" {
+  default = "linux_admin"
+}
